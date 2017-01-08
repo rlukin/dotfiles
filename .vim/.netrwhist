@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/roman/Documents/ctf/python_sbpctf'
+let g:netrw_dirhist_2='/home/roman/Documents'
+let g:netrw_dirhist_3='/home/roman/Documents/ctf'
+let g:netrw_dirhist_4='/home/roman/Documents/ctf/spbctf_local'
+let g:netrw_dirhist_5='/home/roman/Documents'
+let g:netrw_dirhist_6='/home/roman'
+let g:netrw_dirhist_7='/home/roman/.i3'
