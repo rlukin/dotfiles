@@ -175,7 +175,7 @@ exec feh --bg-scale /home/roman/Pictures/wallhaven-13407.jpg
 #some tools in autostart
 exec guake
 exec firefox
-exec_always compton -f --config ~/.i3/compton.conf
+exec compton -f --config ~/.i3/compton.conf
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
