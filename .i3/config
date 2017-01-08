@@ -184,7 +184,7 @@ workspace $workspace4 output LVDS1
 #set default workspace
 assign [class="Firefox"] $workspace3
 assign [class="x-terminal-emulator"] $workspace2
-
+for_window [instance="guake"] floating enable
 
 
 #hotkey for dual monitor setup
