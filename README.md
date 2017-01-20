@@ -3,6 +3,7 @@ Download files from github.com/rlukin
 ## TODO:
  - [ ] Add scripts from /usr/share/i3block* in repo
  - [ ] Change wallpaper path and name
+ - [ ] Merge with my config from work
 
 ## Install this:
  - i3
