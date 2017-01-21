@@ -70,16 +70,16 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 #aliases for workspaces
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
+set $workspace1 "1:I"
+set $workspace2 "2:II"
+set $workspace3 "3:III"
+set $workspace4 "4:IV"
+set $workspace5 "5:V"
+set $workspace6 "6:VI"
+set $workspace7 "7:VII"
+set $workspace8 "8:VIII"
+set $workspace9 "9:IX"
+set $workspace10 "10:X"
 
 # switch to workspace
 bindsym F1 workspace $workspace1
@@ -144,11 +144,12 @@ bindsym $mod+r mode "resize"
 hide_edge_borders vertical
 
 #colorizing my i3
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $bg-color 	         #110022
+set $inactive-bg-color   #110022
+set $current-bg-color    #551188
+set $text-color          #f2f2f2
+set $inactive-text-color #551188
+set $urgent-bg-color     #ccaadd
 set $indicator-color     #f2f2f2
 
 # window colors
@@ -156,20 +157,22 @@ set $indicator-color     #f2f2f2
 client.focused          $bg-color           $bg-color          $text-color          $indicator-color
 client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $inactive-text-color $indicator-color
 
 
 #start i3block as bar
 bar {
 	font pango:System San Francisco Display 12
         status_command i3blocks -c ~/.i3/i3blocks.conf
+	strip_workspace_numbers yes
 	#set colors
 	colors {
 		background $bg-color
-	    	separator #757575
+	    	separator  $text-color
 		#                  border             background         text
-           	focused_workspace  $bg-color          $bg-color          $text-color
-        	inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+           	focused_workspace  $text-color        $current-bg-color  $text-color
+        	inactive_workspace $inactive-bg-color $inactive-bg-color $text-color
+        	active_workspace   $inactive-bg-color $current-bg-color  $text-color
 	       	urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
 
