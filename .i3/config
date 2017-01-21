@@ -194,17 +194,17 @@ for_window [instance="guake"] floating enable
 bindsym $mod+m exec xrandr --output DP3 --off --output DP2 --off --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output LVDS1 --mode 1280x800 --pos 0x1050 --rotate normal --output VGA1 --mode 1680x1050 --pos 0x0 --rotate normal && feh --bg-scale /home/roman/Pictures/wallhaven-13407.jpg
 
 #lock my screen 
-bindsym $mod+Shift+x exec i3lock -t -i /home/roman/Pictures/grass.png
+bindsym $mod+Shift+x exec i3lock -t -i ~/.i3/.lock_wallpaper
 #temporary made suspend need to improve
-bindsym $mod+Control+s exec i3lock -t -i /home/roman/Pictures/grass.png && systemctl suspend
+bindsym $mod+Control+s exec i3lock -t -i ~/.i3/.lock_wallpaper && systemctl suspend
 #autolocker
-exec xautolock -time 15 -locker 'i3lock -t -i /home/roman/Pictures/grass.png' &
+exec xautolock -time 15 -locker 'i3lock -t -i ~/.i3/.lock_wallpaper' &
 
 #lang layout
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 
 #background wallpapers
-exec feh --bg-scale /home/roman/Pictures/wallhaven-13407.jpg
+exec feh --bg-scale ~/.i3/.wallpaper
 
 #some tools in autostart
 exec guake

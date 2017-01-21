@@ -1,8 +1,8 @@
 # Basic enviroment installation and tuning
 Download files from github.com/rlukin/dotfiles
 ## TODO:
- - [ ] Add scripts from /usr/share/i3block* in repo
- - [ ] Change wallpaper path and name
+ - [x] Add scripts from /usr/share/i3block* in repo
+ - [x] Change wallpaper path and name
  - [ ] Merge with my config from work
 
 ## Required packages:
