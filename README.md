@@ -1,15 +1,15 @@
-# Guide for install basic enviroment
+# Basic enviroment installation and tuning
 Download files from github.com/rlukin/dotfiles
 ## TODO:
  - [ ] Add scripts from /usr/share/i3block* in repo
  - [ ] Change wallpaper path and name
  - [ ] Merge with my config from work
 
-## Install this:
+## Required packages:
  - i3
  - compton
  - i3blocks
- - arc theme
+ - arc theme (requires gtk 3.14-3.22, https://github.com/horst3180/arc-theme)
  - feh
  - lxappearance
  - guake
@@ -20,7 +20,7 @@ Download files from github.com/rlukin/dotfiles
   * firebug 
   * Arc Darker Theme, Arc Dark Theme
 
-apply any arc in lxappearance
+## Apply arc theme in lxappearance
 
 ## Change fonts to "Display System Sanfrancisco"
 for fix lxapperance bug, do it manualy
