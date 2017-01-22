@@ -186,7 +186,8 @@ workspace $workspace4 output LVDS1
 
 #set default workspace
 for_window [instance="guake"] floating enable
-for_window [instance="x-terminal-emulator"] border pixel 1
+for_window [instance="^.*"] border pixel 1
+for_window [class="VirtualBox"] floating enable
 
 
 #hotkey for dual monitor setup
