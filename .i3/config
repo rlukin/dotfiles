@@ -144,20 +144,19 @@ bindsym $mod+r mode "resize"
 #hide_edge_borders vertical
 
 #colorizing my i3
-set $bg-color 	         #110022
-set $inactive-bg-color   #110022
-set $current-bg-color    #551188
-set $text-color          #f2f2f2
-set $inactive-text-color #551188
-set $urgent-bg-color     #ccaadd
+set $bg-color 	         #14141F
+set $inactive-bg-color   #000000
+set $text-color          #ffffff
+set $inactive-text-color #666699
+set $urgent-bg-color     #E53935
 set $indicator-color     #f2f2f2
 
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $indicator-color
-client.unfocused        $inacative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-client.focused_inactive $inacative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $inactive-text-color $indicator-color
+client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
 
 
 #start i3block as bar
@@ -168,21 +167,29 @@ bar {
 	#set colors
 	colors {
 		background $bg-color
-	    	separator  $text-color
+		statusline #FF0000
+	    	separator #999999
 		#                  border             background         text
-           	focused_workspace  $text-color        $current-bg-color  $text-color
-        	inactive_workspace $inactive-bg-color $inactive-bg-color $text-color
-        	active_workspace   $inactive-bg-color $current-bg-color  $text-color
+           	focused_workspace  $bg-color          $bg-color          $text-color
+        	inactive_workspace $bg-color          $bg-color          $inactive-text-color
+        	active_workspace   $bg-color          $bg-color          $inactive-text-color
 	       	urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
 
 }
 
 #assign workspace to monitor
+#laptop
 workspace $workspace3 output VGA1
 workspace $workspace1 output LVDS1
 workspace $workspace2 output LVDS1
 workspace $workspace4 output LVDS1
+
+#job
+#workspace $workspace3 output VGA1
+#workspace $workspace1 output VGA1
+#workspace $workspace2 output HDMI1
+#workspace $workspace4 output HDMI1
 
 #set default workspace
 for_window [instance="guake"] floating enable
@@ -207,6 +214,8 @@ exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 exec feh --bg-scale ~/.i3/.wallpaper
 
 #some tools in autostart
+#job
+#exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
 exec guake
 exec --no-startup-id i3-msg "workspace $workspace2; exec x-terminal-emulator; $workspace1"
 exec --no-startup-id i3-msg "workspace $workspace1; exec firefox"

@@ -1,10 +1,5 @@
 # Basic enviroment installation and tuning
 Download files from github.com/rlukin/dotfiles
-## TODO:
- - [x] Add scripts from /usr/share/i3block* in repo
- - [x] Change wallpaper path and name
- - [ ] Merge with my config from work
-
 ## Required packages:
  - i3
  - compton
