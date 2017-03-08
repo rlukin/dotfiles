@@ -91,15 +91,13 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -lh'
+alias ll='ls -lah'
 #alias la='ls -A'
 #alias l='ls -CF'
 
 # Alias definitions.
 alias vi='vim'
 alias tm='tmux attach -t main || tmux new -s main'
-alias ssh_kondr='nc -z -w 1 ssh.beget.ru 1206; ssh rlukin@ssh.beget.ru'
-alias ssh_proxy='nc -z -w 1 ssh.beget.ru 1206; ssh -C2qTnN -D 1080 rlukin@ssh.beget.ru'
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
