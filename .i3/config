@@ -225,8 +225,22 @@ exec --no-startup-id i3-msg "workspace $workspace2; exec terminator; $workspace1
 exec compton -f --config ~/.i3/compton.conf
 exec synclient VertEdgeScroll=0 PalmDetect=1 ClickFinger3=2 TapButton3=2 PalmMinWidth=6
 
+#backlight
+bindsym XF86MonBrightnessDown exec ~/.i3/scripts/brightness down
+bindsym XF86MonBrightnessUp exec ~/.i3/scripts/brightness up
+
+bindsym XF86KbdBrightnessDown exec ~/.i3/scripts/kbd_brightness down
+bindsym XF86KbdBrightnessUp exec ~/.i3/scripts/kbd_brightness up
+
+#touchpad
+bindsym XF86TouchpadToggle exec ~/.i3/scripts/touchpad
+
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -5% #decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86WLAN exec wicd-client
+

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+BRIGHT='/sys/class/leds/asus::kbd_backlight/brightness'
+MAX_BRIGHT='/sys/class/leds/asus::kbd_backlight/max_brightness'
+VALUE=$1
+
+
+if ! test $1 ;then 
+  exit 1
+fi 
+
+
+CURRENT=$(cat $BRIGHT)
+MAX=$(cat $MAX_BRIGHT)
+
+case $1 in 
+"up")
+  if (($CURRENT + 1 > $MAX))
+  then
+	  echo $MAX > $BRIGHT
+  else
+	  echo $CURRENT + 1 | bc > $BRIGHT  
+  fi
+;;
+"down")
+  if (($CURRENT - 1 <= 0))
+  then
+	  echo 0 > $BRIGHT
+  else
+	  echo $CURRENT - 1 | bc > $BRIGHT  
+  fi
+esac
+
+
+CURRENT=$(cat $BRIGHT)
+echo $CURRENT
+DISPLAY=0:0
+notify-send "Keyboard backlight level - $CURRENT/3"
