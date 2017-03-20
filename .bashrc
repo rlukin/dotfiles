@@ -117,4 +117,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH=$PATH:/home/roman/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 9CA6C98D-E49C-A3FB-CB3F-634AB45FA1B0
+
+ssh() {
+if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+    tmux rename-window "$(echo $* | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+else
+    command ssh "$@"
+    fi
+}
