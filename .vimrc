@@ -2,6 +2,7 @@ set nocompatible              " required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -9,6 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle(instead of Plugin)
+Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
@@ -43,3 +45,5 @@ au BufNewFile,BufRead *.js, *.html, *.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
+
+map <F7> :NERDTreeToggle<CR>
